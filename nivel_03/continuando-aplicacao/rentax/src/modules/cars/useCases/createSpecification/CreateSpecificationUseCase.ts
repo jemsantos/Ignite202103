@@ -16,15 +16,15 @@ class CreateSpecificationUseCase {
     console.log("TODO");
   }
 
-  execute({ name, description }: IRequest): void {
+  async execute({ name, description }: IRequest): Promise<void> {
     const specificationAlreadExists =
-      this.specificationsRepository.findByName(name);
+      await this.specificationsRepository.findByName(name);
 
     if (specificationAlreadExists) {
       throw new Error("Specification already exists!");
     }
 
-    this.specificationsRepository.create({
+    await this.specificationsRepository.create({
       name,
       description,
     });
