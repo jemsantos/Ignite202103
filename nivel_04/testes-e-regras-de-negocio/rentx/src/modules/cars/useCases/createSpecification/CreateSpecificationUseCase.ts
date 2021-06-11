@@ -1,7 +1,6 @@
+import { AppError } from "@errors/AppError";
+import { ISpecificationsRepository } from "@modules/cars/repositories/ISpecificationsRepository";
 import { inject, injectable } from "tsyringe";
-
-import { AppError } from "../../../../errors/AppError";
-import { ISpecificationsRepository } from "../../repositories/ISpecificationsRepository";
 
 interface IRequest {
   name: string;
@@ -13,9 +12,7 @@ class CreateSpecificationUseCase {
   constructor(
     @inject("SpecificationsRepository")
     private specificationsRepository: ISpecificationsRepository
-  ) {
-    console.log("TODO");
-  }
+  ) { }
 
   async execute({ name, description }: IRequest): Promise<void> {
     const specificationAlreadExists =
