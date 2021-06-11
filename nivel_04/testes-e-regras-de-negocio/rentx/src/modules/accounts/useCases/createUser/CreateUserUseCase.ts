@@ -10,9 +10,7 @@ class CreateUserUseCase {
   constructor(
     @inject("UsersRepository")
     private usersRepository: IUsersRepository
-  ) {
-    console.log("'UsersRepository' created");
-  }
+  ) { }
 
   async execute({
     name,

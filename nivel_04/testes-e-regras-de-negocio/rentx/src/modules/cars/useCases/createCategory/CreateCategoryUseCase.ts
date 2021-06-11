@@ -13,10 +13,7 @@ class CreateCategoryUseCase {
   constructor(
     @inject("CategoriesRepository")
     private categoriesRepository: ICategoriesRepository
-  ) {
-    /** fazendo isso para parar de dar erro (LIXO) */
-    console.log("'CreateCategoryService' criado");
-  }
+  ) { }
 
   async execute({ name, description }: IRequest): Promise<void> {
     const categoryAlreadyExists = await this.categoriesRepository.findByName(
