@@ -9,7 +9,7 @@ class Car {
   // @Column()
   name: string;
 
-  /// @Column()
+  // @Column()
   description: string;
 
   // @Column()
@@ -36,6 +36,8 @@ class Car {
   constructor() {
     if (!this.id) {
       this.id = uuidV4();
+      this.available = true;
+      this.created_at = new Date();
     }
   }
 }
