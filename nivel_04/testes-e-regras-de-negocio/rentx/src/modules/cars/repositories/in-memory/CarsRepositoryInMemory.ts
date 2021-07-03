@@ -6,6 +6,12 @@ import { ICarsRepository } from "../ICarsRepository";
 class CarsRepositoryInMemory implements ICarsRepository {
   cars: Car[] = [];
 
+  /*  async list(): Promise<Category[]> {
+    const { categories } = this;
+
+    return categories;
+  }
+*/
   async create({
     name,
     description,
